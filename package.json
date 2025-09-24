@@ -1,0 +1,35 @@
+{
+  "name": "family-health-platform",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Do not use this command, only use lint to check'",
+    "build": "echo 'Do not use this command, only use lint to check'",
+    "lint": "tsgo -p tsconfig.check.json; biome lint --only=correctness/noUndeclaredDependencies; ast-grep scan"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.2",
+    "lucide-react": "^0.344.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1",
+    "framer-motion": "^11.0.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "@supabase/supabase-js": "^2.39.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@types/node": "^20.11.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "miaoda-sc-plugin": "^1.0.4"
+  }
+}
