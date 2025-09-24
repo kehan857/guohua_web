@@ -33,10 +33,10 @@ const DietRecommendations: React.FC = () => {
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
           <Utensils className="w-8 h-8 text-health-green-600 mr-3" />
-          <h1 className="text-3xl font-bold text-gray-900">饮食搭配建议</h1>
+          <h1 className="text-3xl font-bold text-gray-900">糖尿病控糖饮食</h1>
         </div>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          根据不同年龄段和健康状况，为您提供科学的饮食搭配方案
+          专业的糖尿病饮食指导，低GI食谱和个性化营养搭配方案
         </p>
       </div>
 
@@ -44,7 +44,7 @@ const DietRecommendations: React.FC = () => {
       <div className="mb-8">
         <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
           <Users className="w-5 h-5 mr-2 text-health-green-600" />
-          选择适用人群
+          选择糖尿病类型
         </h2>
         <AgeGroupSelector
           selectedAge={selectedAge}
@@ -56,7 +56,7 @@ const DietRecommendations: React.FC = () => {
               onClick={() => setSelectedAge(null)}
               className="text-health-green-600 hover:text-health-green-700 text-sm"
             >
-              显示所有人群
+              显示所有类型
             </button>
           </div>
         )}
@@ -67,7 +67,7 @@ const DietRecommendations: React.FC = () => {
         <div className="mb-8">
           <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2 text-red-500" />
-            特殊健康状况
+            血糖控制目标
           </h2>
           <div className="flex flex-wrap gap-2">
             <button
@@ -78,7 +78,7 @@ const DietRecommendations: React.FC = () => {
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              健康人群
+              标准控糖
             </button>
             {conditions.map(condition => (
               <button
@@ -102,7 +102,7 @@ const DietRecommendations: React.FC = () => {
         {filteredPlans.length === 0 ? (
           <div className="text-center py-12">
             <Utensils className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">暂无匹配的饮食方案</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">暂无匹配的控糖饮食方案</h3>
             <p className="text-gray-600">请尝试调整筛选条件</p>
           </div>
         ) : (
@@ -113,7 +113,7 @@ const DietRecommendations: React.FC = () => {
                   <CardTitle className="text-2xl">{plan.name}</CardTitle>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="info">
-                      {plan.ageGroup === 'children' ? '儿童' : plan.ageGroup === 'adult' ? '成人' : '老年人'}
+                      {plan.ageGroup === 'children' ? '1型糖尿病' : plan.ageGroup === 'adult' ? '2型糖尿病' : '妊娠糖尿病'}
                     </Badge>
                     {plan.condition && (
                       <Badge variant="warning">{plan.condition}</Badge>
@@ -159,7 +159,7 @@ const DietRecommendations: React.FC = () => {
               <CardContent>
                 <Tabs defaultValue="meals">
                   <TabsList className="mb-6">
-                    <TabsTrigger value="meals">三餐搭配</TabsTrigger>
+                    <TabsTrigger value="meals">控糖食谱</TabsTrigger>
                     <TabsTrigger value="tips">饮食建议</TabsTrigger>
                   </TabsList>
 
@@ -227,7 +227,7 @@ const DietRecommendations: React.FC = () => {
                     <div className="space-y-4">
                       <h4 className="font-semibold text-gray-900 flex items-center">
                         <Info className="w-5 h-5 mr-2 text-health-green-500" />
-                        专业建议
+                        控糖饮食建议
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {plan.tips.map((tip, index) => (

@@ -19,22 +19,22 @@ const routes: RouteConfig[] = [
     element: <Home />
   },
   {
-    name: '疾病预防',
+    name: '糖尿病管理',
     path: '/prevention',
     element: <Prevention />
   },
   {
-    name: '急救指南',
+    name: '并发症预防',
     path: '/emergency',
     element: <Emergency />
   },
   {
-    name: '饮食建议',
+    name: '控糖饮食',
     path: '/diet',
     element: <Diet />
   },
   {
-    name: '健康自测',
+    name: '血糖监测',
     path: '/selftest',
     element: <SelfTest />
   }

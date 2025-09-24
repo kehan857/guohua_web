@@ -358,10 +358,10 @@ const HealthSelfTest: React.FC = () => {
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
           <Calculator className="w-8 h-8 text-health-green-600 mr-3" />
-          <h1 className="text-3xl font-bold text-gray-900">健康指标自测</h1>
+          <h1 className="text-3xl font-bold text-gray-900">血糖指标监测</h1>
         </div>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          通过科学的测试方法，了解您的健康状况并获得专业建议
+          通过科学的血糖监测方法，了解您的血糖控制状况并获得专业管理建议
         </p>
       </div>
 

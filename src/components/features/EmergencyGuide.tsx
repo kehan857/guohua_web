@@ -31,9 +31,9 @@ const EmergencyGuide: React.FC = () => {
 
   const getCategoryText = (category: EmergencyStep['category']) => {
     switch (category) {
-      case 'basic': return '基础急救';
-      case 'advanced': return '进阶急救';
-      case 'critical': return '紧急抢救';
+      case 'basic': return '轻度并发症';
+      case 'advanced': return '中度并发症';
+      case 'critical': return '严重并发症';
       default: return '未知';
     }
   };
@@ -43,14 +43,14 @@ const EmergencyGuide: React.FC = () => {
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
           <AlertTriangle className="w-8 h-8 text-red-600 mr-3" />
-          <h1 className="text-3xl font-bold text-gray-900">家庭急救指南</h1>
+          <h1 className="text-3xl font-bold text-gray-900">糖尿病并发症预防</h1>
         </div>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          掌握基本急救技能，关键时刻能够挽救生命
+          了解糖尿病并发症的预防和应急处理，保护您的健康
         </p>
         <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl">
           <p className="text-red-700 font-medium">
-            ⚠️ 紧急情况请立即拨打120急救电话，本指南仅供参考学习
+            ⚠️ 出现严重并发症请立即就医，本指南仅供参考学习
           </p>
         </div>
       </div>
@@ -61,7 +61,7 @@ const EmergencyGuide: React.FC = () => {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
             type="text"
-            placeholder="搜索急救方法..."
+            placeholder="搜索并发症预防方法..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500"
@@ -118,7 +118,7 @@ const EmergencyGuide: React.FC = () => {
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                   <Shield className="w-4 h-4 mr-2 text-health-green-500" />
-                  操作步骤
+                  预防措施
                 </h4>
                 <div className="space-y-3">
                   {step.steps.map((stepItem, index) => (
@@ -161,7 +161,7 @@ const EmergencyGuide: React.FC = () => {
                   </DialogHeader>
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold mb-3">详细步骤说明</h4>
+                      <h4 className="font-semibold mb-3">详细预防措施</h4>
                       <div className="space-y-4">
                         {step.steps.map((stepItem, index) => (
                           <div key={index} className="p-4 bg-gray-50 rounded-lg">
@@ -169,7 +169,7 @@ const EmergencyGuide: React.FC = () => {
                               <div className="w-6 h-6 bg-health-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-2">
                                 {index + 1}
                               </div>
-                              <span className="font-medium">步骤 {index + 1}</span>
+                              <span className="font-medium">措施 {index + 1}</span>
                             </div>
                             <p className="text-gray-700 leading-relaxed">{stepItem}</p>
                           </div>

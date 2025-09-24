@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, AlertCircle, Shield, Users } from 'lucide-react';
+import { Search, AlertCircle, Activity, Users } from 'lucide-react';
 import { Disease, AgeGroup } from '../../types/health';
 import { diseases } from '../../data/diseases';
 import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
@@ -45,11 +45,11 @@ const DiseasePreventionLibrary: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
-          <Shield className="w-8 h-8 text-health-green-600 mr-3" />
-          <h1 className="text-3xl font-bold text-gray-900">常见病预防库</h1>
+          <Activity className="w-8 h-8 text-health-green-600 mr-3" />
+          <h1 className="text-3xl font-bold text-gray-900">糖尿病管理中心</h1>
         </div>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          了解常见疾病的预防知识，为您和家人的健康保驾护航
+          全面的糖尿病管理知识库，帮助您科学控糖，预防并发症
         </p>
       </div>
 
@@ -57,7 +57,7 @@ const DiseasePreventionLibrary: React.FC = () => {
       <div className="mb-8">
         <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
           <Users className="w-5 h-5 mr-2 text-health-green-600" />
-          选择适用人群
+          选择糖尿病类型
         </h2>
         <AgeGroupSelector
           selectedAge={selectedAge}
@@ -69,7 +69,7 @@ const DiseasePreventionLibrary: React.FC = () => {
               onClick={() => setSelectedAge(null)}
               className="text-health-green-600 hover:text-health-green-700 text-sm"
             >
-              显示所有人群
+              显示所有类型
             </button>
           </div>
         )}
@@ -81,7 +81,7 @@ const DiseasePreventionLibrary: React.FC = () => {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
             type="text"
-            placeholder="搜索疾病名称或症状..."
+            placeholder="搜索糖尿病相关知识或症状..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-health-green-500 focus:border-health-green-500"
@@ -120,7 +120,7 @@ const DiseasePreventionLibrary: React.FC = () => {
         {filteredDiseases.length === 0 ? (
           <div className="text-center py-12">
             <AlertCircle className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">未找到相关疾病</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">未找到相关内容</h3>
             <p className="text-gray-600">请尝试调整搜索条件或筛选选项</p>
           </div>
         ) : (
@@ -137,7 +137,7 @@ const DiseasePreventionLibrary: React.FC = () => {
                       </Badge>
                       {disease.ageGroups.map(age => (
                         <Badge key={age} variant="default">
-                          {age === 'children' ? '儿童' : age === 'adult' ? '成人' : '老年人'}
+                          {age === 'children' ? '1型糖尿病' : age === 'adult' ? '2型糖尿病' : '妊娠糖尿病'}
                         </Badge>
                       ))}
                     </div>
@@ -170,8 +170,8 @@ const DiseasePreventionLibrary: React.FC = () => {
                   <AccordionItem value="prevention">
                     <AccordionTrigger>
                       <span className="flex items-center">
-                        <Shield className="w-4 h-4 mr-2 text-health-green-500" />
-                        预防措施
+                        <Activity className="w-4 h-4 mr-2 text-health-green-500" />
+                        管理措施
                       </span>
                     </AccordionTrigger>
                     <AccordionContent>

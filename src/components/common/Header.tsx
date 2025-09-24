@@ -18,7 +18,7 @@ const Header: React.FC = () => {
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <span className="ml-3 text-xl font-bold bg-gradient-to-r from-health-green-600 to-health-green-700 bg-clip-text text-transparent">
-                全家健康管理平台
+                糖尿病健康管理平台
               </span>
             </Link>
           </div>
