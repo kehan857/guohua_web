@@ -5,6 +5,7 @@ import path from 'path';
 import { miaodaDevPlugin } from "miaoda-sc-plugin";
 
 export default defineConfig({
+  base: '/guohua_web/',
   plugins: [react(), miaodaDevPlugin()],
   resolve: {
     alias: {
